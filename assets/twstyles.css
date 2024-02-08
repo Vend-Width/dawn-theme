@@ -606,10 +606,10 @@ video {
   position: sticky;
 }
 .-inset-1 {
-  inset: -0.25rem;
+  inset: -4px;
 }
 .end-1 {
-  inset-inline-end: 0.25rem;
+  inset-inline-end: 4px;
 }
 .isolate {
   isolation: isolate;
@@ -651,7 +651,7 @@ video {
   clear: none;
 }
 .mt-2 {
-  margin-top: 0.5rem;
+  margin-top: 8px;
 }
 .box-border {
   box-sizing: border-box;
@@ -741,7 +741,7 @@ video {
   display: none;
 }
 .h-4 {
-  height: 1rem;
+  height: 16px;
 }
 .w-\[this-is\\\\\] {
   width: this-is\\;
@@ -1152,8 +1152,8 @@ video {
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  margin-right: calc(8px * var(--tw-space-x-reverse));
+  margin-left: calc(8px * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-y-reverse > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 1;
@@ -1388,55 +1388,55 @@ video {
   word-break: keep-all;
 }
 .rounded {
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 .rounded-b {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .rounded-e {
-  border-start-end-radius: 0.25rem;
-  border-end-end-radius: 0.25rem;
+  border-start-end-radius: 4px;
+  border-end-end-radius: 4px;
 }
 .rounded-l {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 .rounded-r {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 .rounded-s {
-  border-start-start-radius: 0.25rem;
-  border-end-start-radius: 0.25rem;
+  border-start-start-radius: 4px;
+  border-end-start-radius: 4px;
 }
 .rounded-t {
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 .rounded-bl {
-  border-bottom-left-radius: 0.25rem;
+  border-bottom-left-radius: 4px;
 }
 .rounded-br {
-  border-bottom-right-radius: 0.25rem;
+  border-bottom-right-radius: 4px;
 }
 .rounded-ee {
-  border-end-end-radius: 0.25rem;
+  border-end-end-radius: 4px;
 }
 .rounded-es {
-  border-end-start-radius: 0.25rem;
+  border-end-start-radius: 4px;
 }
 .rounded-se {
-  border-start-end-radius: 0.25rem;
+  border-start-end-radius: 4px;
 }
 .rounded-ss {
-  border-start-start-radius: 0.25rem;
+  border-start-start-radius: 4px;
 }
 .rounded-tl {
-  border-top-left-radius: 0.25rem;
+  border-top-left-radius: 4px;
 }
 .rounded-tr {
-  border-top-right-radius: 0.25rem;
+  border-top-right-radius: 4px;
 }
 .border {
   border-width: 1px;
@@ -1575,10 +1575,10 @@ video {
      object-fit: scale-down;
 }
 .p-1 {
-  padding: 0.25rem;
+  padding: 4px;
 }
 .p-2 {
-  padding: 0.5rem;
+  padding: 8px;
 }
 .text-left {
   text-align: left;

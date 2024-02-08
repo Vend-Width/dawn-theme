@@ -887,7 +887,7 @@ summary::-webkit-details-marker {
 }
 
 /* component-grid */
-.grid {
+.dawn-grid {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
@@ -898,7 +898,7 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (min-width: 750px) {
-  .grid {
+  .dawn-grid {
     column-gap: var(--grid-desktop-horizontal-spacing);
     row-gap: var(--grid-desktop-vertical-spacing);
   }
@@ -922,7 +922,7 @@ summary::-webkit-details-marker {
   }
 }
 
-.grid--gapless.grid {
+.grid--gapless.dawn-grid {
   column-gap: 0;
   row-gap: 0;
 }
@@ -2321,13 +2321,25 @@ product-info .loading__spinner:not(.hidden) ~ *,
 }
 
 @keyframes translateAnnouncementSlideIn {
-  0% {opacity: 0; transform: translateX(var(--announcement-translate-from))}
-  100% {opacity: 1; transform: translateX(0)}
+  0% {
+    opacity: 0;
+    transform: translateX(var(--announcement-translate-from));
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes translateAnnouncementSlideOut {
-  0% {opacity: 1; transform: translateX(0)}
-  100% {opacity: 0; transform: translateX(var(--announcement-translate-to))}
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(var(--announcement-translate-to));
+  }
 }
 
 /* section-header */
@@ -3057,7 +3069,7 @@ details-disclosure > details {
 
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {
-  .grid {
+  .dawn-grid {
     margin-left: calc(-1 * var(--grid-mobile-horizontal-spacing));
   }
 
@@ -3067,7 +3079,7 @@ details-disclosure > details {
   }
 
   @media screen and (min-width: 750px) {
-    .grid {
+    .dawn-grid {
       margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
     }
 

@@ -2,7 +2,7 @@
   margin: 0;
 }
 
-.product.grid {
+.product.dawn-grid {
   gap: 0;
 }
 
@@ -173,7 +173,6 @@
 .product-form__input .form__label {
   padding-left: 0;
 }
-
 
 /* Fallback */
 .no-js .shopify-payment-button__button [role='button']:focus + label {
