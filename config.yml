@@ -1,0 +1,9 @@
+development:
+  password: shptka_4d430851a24f519e6967ebb9e7abefa1
+  theme_id: "165435507005"
+  store: vendwith.myshopify.com
+  ignore_files:
+    - node_modules
+    - package-lock.json
+    - package.json
+    - tailwind.config.js
