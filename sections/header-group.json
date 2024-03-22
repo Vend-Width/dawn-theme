@@ -31,6 +31,7 @@
       "type": "header",
       "custom_css": [
         "sticky-header {background-color: transparent; backdrop-filter: blur(20px);}",
+        "img {backdrop-filter: invert(1);}",
         ".header__menu-item span {color: white;}"
       ],
       "settings": {
