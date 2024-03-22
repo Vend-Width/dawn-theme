@@ -176,7 +176,7 @@
           "type": "column",
           "settings": {
             "title": "Quality & Service",
-            "text": "",
+            "text": "<p>World-class software engineering methods & practices are in our DNA 🧬<br\/>We use the same tools and practices as top-tier tech startups in  US\/Canada<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -184,7 +184,7 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
+            "title": "Value for Customer",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
