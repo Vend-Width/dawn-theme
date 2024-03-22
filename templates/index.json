@@ -190,7 +190,7 @@
       ],
       "custom_css": [
         "p {font-size: 18px;}",
-        "h3 {font-size: 26px; font-family: Spline Sans Mono Medium;}"
+        "h3 {font-size: 26px; font-family: Minion Pro Medium Italic Subhead;}"
       ],
       "settings": {
         "title": "",
