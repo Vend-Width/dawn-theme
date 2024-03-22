@@ -167,7 +167,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Overdeliver<\/strong>",
-            "text": "<p>We <em>understand<\/em> and <em>care<\/em> about <\/p><p>our client's business.<br\/><br\/><\/p><p>Your success is our success.<\/p>",
+            "text": "<p>Your success is our success.<br\/><\/p><p>We <em>understand<\/em> and <em>care<\/em> about <\/p><p>our client's business.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -176,7 +176,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Quality<\/strong>",
-            "text": "<p>World-class software engineering methods & practices are in our DNA 🧬.<\/p><p><br\/>We use the same tools and practices as top-tier tech startups in  US\/Canada.<\/p>",
+            "text": "<p>Top tier 🇺🇸 🇨🇦 tech co. software engineering methods & practices are in our DNA 🧬.<\/p>",
             "link_label": "",
             "link": ""
           }
