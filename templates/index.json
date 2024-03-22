@@ -167,7 +167,7 @@
           "type": "column",
           "settings": {
             "title": "Overdeliver",
-            "text": "<p>We <em>understand<\/em> and <em>care<\/em> about our client's business. Your success is our success.<\/p>",
+            "text": "<p>We <em>understand<\/em> and <em>care<\/em> about our client's business<\/p><p><\/p><p>Your success is our success<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -185,7 +185,7 @@
           "type": "column",
           "settings": {
             "title": "Value for Customer",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "",
             "link_label": "",
             "link": ""
           }
