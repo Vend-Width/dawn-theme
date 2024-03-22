@@ -29,11 +29,15 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        "li a {background-color: white;}",
+        "sticky-header {background-color: transparent; }"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "reduce-logo-size",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "",
