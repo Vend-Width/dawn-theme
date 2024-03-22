@@ -53,8 +53,8 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "We ➡ Vend With ⬅ you",
-            "heading_size": "h1"
+            "heading": "We ⇉ Vend With ⇇ You",
+            "heading_size": "h0"
           }
         },
         "text": {
@@ -69,11 +69,12 @@
         "text"
       ],
       "custom_css": [
-        "p {font-size: 22px;}"
+        "p {font-size: 22px; text-align: left;}",
+        "h2 {font-family: \"Spline Sans Mono Medium\";}"
       ],
       "settings": {
         "desktop_content_position": "center",
-        "content_alignment": "left",
+        "content_alignment": "center",
         "color_scheme": "scheme-4",
         "full_width": true,
         "padding_top": 72,
@@ -83,7 +84,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
@@ -169,7 +170,7 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Overdeliver",
+            "title": "Over-deliver",
             "text": "<p>Your success is our success.<br\/><br\/><\/p><p>We <em>understand<\/em> and <em>care<\/em> about <\/p><p>our client's business.<\/p>",
             "link_label": "",
             "link": ""
@@ -178,8 +179,8 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Quality",
-            "text": "<p>Decades in software and Shopify.<br\/><br\/>Top tier 🇺🇸 🇨🇦 tech co. software engineering methods & practices are in our DNA 🧬.<\/p>",
+            "title": "Quality Focus",
+            "text": "<p>Decades in software and Shopify.<br\/><br\/>Top-tier 🇺🇸 tech company software engineering methods & practices are in our DNA 🧬.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -201,10 +202,10 @@
       ],
       "custom_css": [
         "p {font-size: 18px;}",
-        "h3 {font-size: 28px;}"
+        "h3 {font-size: 32px; font-family: Minion Pro Medium Italic Subhead;}"
       ],
       "settings": {
-        "title": "Our Value Prop",
+        "title": "",
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -244,9 +245,9 @@
         "collapsible_row_bHXQED": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "Is this website a Shopify store?",
+            "icon": "none",
+            "row_content": "<p>Yes!<\/p>",
             "page": ""
           }
         },
