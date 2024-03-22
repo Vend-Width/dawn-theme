@@ -30,8 +30,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        "sticky-header {background-color: transparent;}",
-        "img {backdrop-filter: invert(1);}"
+        "sticky-header {background-color: transparent; backdrop-filter: invert(1);}"
       ],
       "settings": {
         "logo_position": "middle-left",
