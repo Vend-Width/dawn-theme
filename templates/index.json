@@ -60,7 +60,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>In our decades of offering technical consulting for Shopify merchants<\/p>"
           }
         }
       },
@@ -169,7 +169,7 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "<strong>Overdeliver<\/strong>",
+            "title": "Overdeliver",
             "text": "<p>Your success is our success.<br\/><br\/><\/p><p>We <em>understand<\/em> and <em>care<\/em> about <\/p><p>our client's business.<\/p>",
             "link_label": "",
             "link": ""
@@ -178,7 +178,7 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "<strong>Quality<\/strong>",
+            "title": "Quality",
             "text": "<p>Decades in software and Shopify.<br\/><br\/>Top tier 🇺🇸 🇨🇦 tech co. software engineering methods & practices are in our DNA 🧬.<\/p>",
             "link_label": "",
             "link": ""
@@ -187,7 +187,7 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "<strong>Value for Customer<\/strong>",
+            "title": "Value for Customer",
             "text": "<p>US 🇺🇸\/Canadian 🇨🇦 led team.<br\/><br\/>We offer onshore cultural-fit and quality, at a value that is not possible onshore.<\/p>",
             "link_label": "",
             "link": ""
@@ -198,6 +198,9 @@
         "column1",
         "column2",
         "column3"
+      ],
+      "custom_css": [
+        "p {font-size: 22px;}"
       ],
       "settings": {
         "title": "Our Value Prop",
