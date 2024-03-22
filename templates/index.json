@@ -200,7 +200,8 @@
         "column3"
       ],
       "custom_css": [
-        "p {font-size: 22px;}"
+        "p {font-size: 18px;}",
+        "h3 {font-size: 28px;}"
       ],
       "settings": {
         "title": "Our Value Prop",
