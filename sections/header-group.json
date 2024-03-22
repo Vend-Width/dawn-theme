@@ -31,13 +31,13 @@
       "type": "header",
       "custom_css": [
         "sticky-header {background-color: transparent; backdrop-filter: invert(1);}",
-        ".header__menu-item span {}"
+        ".header__menu-item span {color: white;}"
       ],
       "settings": {
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "reduce-logo-size",
+        "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "",
