@@ -1311,6 +1311,12 @@
       },
       {
         "type": "text",
+        "id": "social_linkedin_link",
+        "label": "Linked In",
+        "info": "https:\/\/ca.linkedin.com\/company\/shopify"
+      },
+      {
+        "type": "text",
         "id": "social_facebook_link",
         "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
         "placeholder": "t:settings_schema.social-media.settings.social_facebook_link.info"
