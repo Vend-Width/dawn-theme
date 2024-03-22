@@ -226,9 +226,9 @@
         "collapsible_row_Y76ECq": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
+            "heading": "Why Trello?",
+            "icon": "none",
+            "row_content": "<p>We've found Trello to be the best kanban-style tool. It's simple to use, easy to see where things are are.<br\/><br\/>The reverse-chronological board Activity list, familiar notification system, and mobile apps, are other features that we find work really well.<\/p>",
             "page": ""
           }
         },
