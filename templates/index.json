@@ -167,7 +167,7 @@
           "type": "column",
           "settings": {
             "title": "Overdeliver",
-            "text": "",
+            "text": "<p>We <em>understand<\/em> and <em>care<\/em> about our client's business. Your success is our success.<\/p>",
             "link_label": "",
             "link": ""
           }
