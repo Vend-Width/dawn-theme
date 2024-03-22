@@ -197,7 +197,7 @@
         "column3"
       ],
       "settings": {
-        "title": "Our values",
+        "title": "Our Value Prop",
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -221,7 +221,7 @@
           "settings": {
             "heading": "Where are you located?",
             "icon": "none",
-            "row_content": "<p>We are based in Taiwan. Yes where the chips are made!<\/p>",
+            "row_content": "<p>We are based in Taiwan 🇹🇼. Yes where the chips are made! <br\/><br\/>We're also sometimes in Japan 🇯🇵.<\/p>",
             "page": ""
           }
         },
