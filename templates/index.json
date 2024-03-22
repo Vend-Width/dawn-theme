@@ -70,11 +70,11 @@
       ],
       "settings": {
         "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
+        "content_alignment": "left",
+        "color_scheme": "scheme-5",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 48
       }
     },
     "featured_collection": {
