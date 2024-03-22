@@ -175,7 +175,7 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "<strong>Quality & Service<\/strong>",
+            "title": "<strong>Quality<\/strong>",
             "text": "<p>World-class software engineering methods & practices are in our DNA 🧬.<\/p><p><br\/>We use the same tools and practices as top-tier tech startups in  US\/Canada.<\/p>",
             "link_label": "",
             "link": ""
@@ -185,7 +185,7 @@
           "type": "column",
           "settings": {
             "title": "<strong>Value for Customer<\/strong>",
-            "text": "<p>Onshore quality at incredible pirces.<\/p>",
+            "text": "<p>US 🇺🇸\/Canadian 🇨🇦 led team.<br\/><br\/>We offer onshore cultural-fit and quality, at a value that is not possible onshore.<\/p>",
             "link_label": "",
             "link": ""
           }
