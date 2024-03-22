@@ -30,7 +30,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        "sticky-header {background-color: transparent; backdrop-filter: blur(6px);}",
+        "sticky-header {background-color: transparent; backdrop-filter: blur(10px);}",
         ".header-wrapper--border-bottom {border-bottom: none;}"
       ],
       "settings": {
