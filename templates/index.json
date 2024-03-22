@@ -258,8 +258,8 @@
         "collapsible_row_HtRPYX"
       ],
       "settings": {
-        "caption": "FAQ",
-        "heading": "Collapsible content",
+        "caption": "",
+        "heading": "Frequent Questions",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "none",
