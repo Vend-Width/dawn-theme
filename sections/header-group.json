@@ -30,8 +30,7 @@
     "header": {
       "type": "header",
       "custom_css": [
-        "li a {background-color: white;}",
-        "sticky-header {background-color: transparent; }"
+        "sticky-header {background-color: transparent;}"
       ],
       "settings": {
         "logo_position": "middle-left",
