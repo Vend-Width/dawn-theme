@@ -212,6 +212,15 @@
     "collapsible_content_neDwwf": {
       "type": "collapsible-content",
       "blocks": {
+        "collapsible_row_efMiip": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Are you selling Shopify dev services, on a Shopify store?",
+            "icon": "none",
+            "row_content": "<p>Yes!<\/p>",
+            "page": ""
+          }
+        },
         "collapsible_row_GfRn6j": {
           "type": "collapsible_row",
           "settings": {
@@ -247,23 +256,14 @@
             "row_content": "",
             "page": ""
           }
-        },
-        "collapsible_row_efMiip": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Are you selling Shopify dev services, on a Shopify store?",
-            "icon": "none",
-            "row_content": "<p>Yes!<\/p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
+        "collapsible_row_efMiip",
         "collapsible_row_GfRn6j",
         "collapsible_row_Y76ECq",
         "collapsible_row_bHXQED",
-        "collapsible_row_HtRPYX",
-        "collapsible_row_efMiip"
+        "collapsible_row_HtRPYX"
       ],
       "settings": {
         "caption": "",
