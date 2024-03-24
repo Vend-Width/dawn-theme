@@ -31,7 +31,8 @@
       "type": "header",
       "custom_css": [
         "sticky-header {background-color: transparent; backdrop-filter: blur(10px);}",
-        ".header-wrapper--border-bottom {border-bottom: none;}"
+        ".header-wrapper--border-bottom {border-bottom: none;}",
+        ".header__heading-link {padding: 0;}"
       ],
       "settings": {
         "logo_position": "middle-left",
