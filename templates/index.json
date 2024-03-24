@@ -238,22 +238,12 @@
             "row_content": "<p>We've found Trello to be the best kanban-style tool. It's simple to use, easy to see where things are are.<br\/><br\/>The reverse-chronological board Activity list, familiar notification system, and mobile apps, are other features that we find work really well.<\/p>",
             "page": ""
           }
-        },
-        "collapsible_row_bHXQED": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Is this website a Shopify store?",
-            "icon": "none",
-            "row_content": "<p>Yes!<\/p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
         "collapsible_row_efMiip",
         "collapsible_row_GfRn6j",
-        "collapsible_row_Y76ECq",
-        "collapsible_row_bHXQED"
+        "collapsible_row_Y76ECq"
       ],
       "settings": {
         "caption": "",
