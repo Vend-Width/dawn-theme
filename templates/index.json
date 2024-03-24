@@ -247,23 +247,13 @@
             "row_content": "<p>Yes!<\/p>",
             "page": ""
           }
-        },
-        "collapsible_row_HtRPYX": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Collapsible row",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
-          }
         }
       },
       "block_order": [
         "collapsible_row_efMiip",
         "collapsible_row_GfRn6j",
         "collapsible_row_Y76ECq",
-        "collapsible_row_bHXQED",
-        "collapsible_row_HtRPYX"
+        "collapsible_row_bHXQED"
       ],
       "settings": {
         "caption": "",
