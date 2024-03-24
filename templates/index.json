@@ -12,6 +12,7 @@
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>In our decades of helping Shopify merchants<\/p>"
           }
@@ -30,8 +31,8 @@
         "content_alignment": "center",
         "color_scheme": "scheme-4",
         "full_width": true,
-        "padding_top": 72,
-        "padding_bottom": 84
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "image_banner": {
