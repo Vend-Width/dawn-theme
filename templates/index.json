@@ -238,12 +238,22 @@
             "row_content": "<p>We've found Trello to be the best kanban-style tool. It's simple to use, easy to see where things are are.<br\/><br\/>The reverse-chronological board Activity list, familiar notification system, and mobile apps, are other features that we find work really well.<\/p>",
             "page": ""
           }
+        },
+        "collapsible_row_hfApBQ": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do you offer refunds?",
+            "icon": "none",
+            "row_content": "<p>We offer prorated refunds for unused time.<br\/><br\/>Our policy is no refunds on work rendered. <\/p><p>Our aim is to have long-term relationships with clients, so we will do our best to make things right.<\/p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
         "collapsible_row_efMiip",
         "collapsible_row_GfRn6j",
-        "collapsible_row_Y76ECq"
+        "collapsible_row_Y76ECq",
+        "collapsible_row_hfApBQ"
       ],
       "settings": {
         "caption": "",
