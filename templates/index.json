@@ -244,7 +244,7 @@
           "settings": {
             "heading": "Do you offer refunds?",
             "icon": "none",
-            "row_content": "<p>We offer prorated refunds for unused time.<br\/><br\/>Our policy is no refunds on work rendered. <\/p><p>Our aim is to have long-term relationships with clients, so we will do our best to make things right.<\/p>",
+            "row_content": "<p>We offer prorated refunds for unused time.<br\/><br\/>Our policy is no refunds on work rendered. <br\/><br\/>Our aim is to have long-term relationships with clients, so we will do our best to make things right.<\/p>",
             "page": ""
           }
         }
