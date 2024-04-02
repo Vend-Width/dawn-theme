@@ -307,7 +307,7 @@
         "video_autoplay": true,
         "force_video_autoplay": false,
         "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/aa57b5a6f9d648ed975a3792d9ffd6d0.webm",
-        "image_height": "medium",
+        "image_height": "large",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
         "desktop_content_alignment": "center",
