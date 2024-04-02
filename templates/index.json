@@ -24,6 +24,7 @@
       ],
       "settings": {
         "image_overlay_opacity": 40,
+        "has_max_width": false,
         "video_background": false,
         "video_autoplay": true,
         "force_video_autoplay": false,
@@ -303,6 +304,7 @@
       "type": "image-banner",
       "settings": {
         "image_overlay_opacity": 0,
+        "has_max_width": true,
         "video_background": true,
         "video_autoplay": true,
         "force_video_autoplay": false,
