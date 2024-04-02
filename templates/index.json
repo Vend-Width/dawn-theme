@@ -198,21 +198,6 @@
         "padding_bottom": 36
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "Our process",
-        "heading_size": "h1",
-        "enable_video_looping": true,
-        "video": "shopify:\/\/files\/videos\/trello-progress-1080-high.webm",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "collapsible_content_neDwwf": {
       "type": "collapsible-content",
       "blocks": {
@@ -290,6 +275,25 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "image_banner_wcT7nz": {
+      "type": "image-banner",
+      "settings": {
+        "image_overlay_opacity": 0,
+        "video_background": true,
+        "video_autoplay": true,
+        "force_video_autoplay": false,
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/aa57b5a6f9d648ed975a3792d9ffd6d0.webm",
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -298,8 +302,8 @@
     "featured_collection",
     "collage",
     "multicolumn",
-    "video",
     "collapsible_content_neDwwf",
-    "featured_blog_YARtHR"
+    "featured_blog_YARtHR",
+    "image_banner_wcT7nz"
   ]
 }
