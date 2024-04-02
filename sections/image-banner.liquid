@@ -55,6 +55,17 @@
   id="Banner-{{ section.id }}"
   class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} {% if section.settings.video_background == true %} video-background {% endif %}"
 >
+  {% if section.settings.has_max_width %}
+    {%- style -%}
+      #Banner-{{ section.id }} {
+        margin: 0 auto;
+        max-width: calc(var(--page-width) - 10rem);
+        border-radius: {{ section.settings.section_border_radius }}px;
+        overflow: hidden;
+      }
+    {%- endstyle -%}
+  {% endif %}
+
   {%- if section.settings.video_background == true -%}
     <div class="banner__media media video-background">
       <video
@@ -228,6 +239,16 @@
       "unit": "%",
       "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Full page width or has Max page width"
+    },
+    {
+      "type": "checkbox",
+      "id": "has_max_width",
+      "default": false,
+      "label": "has max width"
     },
     {
       "type": "header",
