@@ -25,7 +25,6 @@
       "settings": {
         "section_border_radius": 10,
         "image_overlay_opacity": 40,
-        "has_max_width": false,
         "video_background": false,
         "video_autoplay": true,
         "force_video_autoplay": false,
@@ -304,9 +303,8 @@
     "image_banner_wcT7nz": {
       "type": "image-banner",
       "settings": {
-        "section_border_radius": 30,
+        "section_border_radius": 12,
         "image_overlay_opacity": 0,
-        "has_max_width": true,
         "video_background": true,
         "video_autoplay": true,
         "force_video_autoplay": false,
