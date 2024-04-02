@@ -29,6 +29,25 @@
   }
 {%- endstyle -%}
 
+{%- style -%}
+  #Banner-{{ section.id }} {
+    margin: 0 auto;
+    margin-top: var(--spacing-sections-mobile);
+    border-radius: {{ section.settings.section_border_radius }}px;
+    overflow: hidden;
+  }
+
+  #Banner-{{ section.id }} video {
+    height: 101%;
+  }
+
+  @media screen and (min-width: 750px) {
+    #Banner-{{ section.id }} {
+      margin-top: var(--spacing-sections-desktop);
+    }
+  }
+{%- endstyle -%}
+
 {%- liquid
   assign full_width = '100vw'
   assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
@@ -55,17 +74,6 @@
   id="Banner-{{ section.id }}"
   class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} {% if section.settings.video_background == true %} video-background {% endif %}"
 >
-  {% if section.settings.has_max_width %}
-    {%- style -%}
-      #Banner-{{ section.id }} {
-        margin: 0 auto;
-        max-width: calc(var(--page-width) - 10rem);
-        border-radius: {{ section.settings.section_border_radius }}px;
-        overflow: hidden;
-      }
-    {%- endstyle -%}
-  {% endif %}
-
   {%- if section.settings.video_background == true -%}
     <div class="banner__media media video-background">
       <video
@@ -99,8 +107,7 @@
       </script>
     {%- endif -%}
   {%- endif -%}
-
-  {%- if section.settings.image != blank -%}
+  {%- if section.settings.image != blank and section.settings.video_background == false -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {%- liquid
         assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
@@ -132,7 +139,7 @@
       {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
     </div>
   {%- endif -%}
-  {%- if section.settings.image_2 != blank -%}
+  {%- if section.settings.image_2 != blank and section.settings.video_background == false -%}
     <div class="banner__media media{% if section.settings.image != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
       {%- liquid
         assign image_height_2 = section.settings.image_2.width | divided_by: section.settings.image_2.aspect_ratio
@@ -215,10 +222,11 @@
 {
   "name": "t:sections.image-banner.name",
   "tag": "section",
-  "class": "section",
+  "class": "section page-width",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
+
   "settings": [
     {
       "type": "range",
@@ -249,20 +257,6 @@
       "unit": "%",
       "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
       "default": 0
-    },
-    {
-      "type": "header",
-      "content": "Full page width or has Max page width"
-    },
-    {
-      "type": "checkbox",
-      "id": "has_max_width",
-      "default": false,
-      "label": "has max width"
-    },
-    {
-      "type": "header",
-      "content": "Video background"
     },
     {
       "type": "checkbox",
