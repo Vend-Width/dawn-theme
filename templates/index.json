@@ -294,6 +294,29 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "rich_text_wdrjyT": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xKwD3b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our pro",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xKwD3b"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -304,6 +327,7 @@
     "multicolumn",
     "collapsible_content_neDwwf",
     "featured_blog_YARtHR",
-    "image_banner_wcT7nz"
+    "image_banner_wcT7nz",
+    "rich_text_wdrjyT"
   ]
 }
