@@ -95,7 +95,7 @@
   }
 
   .banner--large:not(.banner--adapt) {
-    min-height: 63vw;
+    min-height: min(1000px, 63vw);
   }
 
   .banner__content.banner__content--top-left {
@@ -484,9 +484,10 @@
 }
 
 @media screen and (min-width: 1600px) {
-  .banner__media {
-    height: 100% !important;
-    max-height: 1000px;
+
+  .banner__media,
+  .banner {
+    height: min(1000px, 63vw);
   }
 }
 
