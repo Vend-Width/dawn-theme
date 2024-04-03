@@ -1,228 +1,244 @@
-{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+<section
+  id="ImageBanner-{{ section.id }}"
+  class="section-{{ section.id }}-padding {% if section.settings.has_max_width %} page-width {% endif %}gradient color-{{ section.settings.color_scheme }}"
+  data-section="{{ section.id }}"
+>
+  {{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
 
-{%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
-  {%- style -%}
-    @media screen and (max-width: 749px) {
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__media::before,
-      #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
-        content: '';
-        display: block;
+  {%- if section.settings.image_height == 'adapt' and section.settings.image != blank -%}
+    {%- style -%}
+      @media screen and (max-width: 749px) {
+        #Banner-{{ section.id }}::before,
+        #Banner-{{ section.id }} .banner__media::before,
+        #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
+          padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+          content: '';
+          display: block;
+        }
       }
+
+      @media screen and (min-width: 750px) {
+        #Banner-{{ section.id }}::before,
+        #Banner-{{ section.id }} .banner__media::before {
+          padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+          content: '';
+          display: block;
+        }
+      }
+    {%- endstyle -%}
+  {%- endif -%}
+
+  {%- style -%}
+    #Banner-{{ section.id }}::after {
+      opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+    }
+  {%- endstyle -%}
+
+  {%- style -%}
+    #Banner-{{ section.id }} {
+      margin: 0 auto;
+      margin-top: var(--spacing-sections-mobile);
+      border-radius: {{ section.settings.section_border_radius }}px;
+      overflow: hidden;
+    }
+
+    #Banner-{{ section.id }} video {
+      height: 101%;
     }
 
     @media screen and (min-width: 750px) {
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__media::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
-        content: '';
-        display: block;
+      #Banner-{{ section.id }} {
+        margin-top: var(--spacing-sections-desktop);
       }
     }
   {%- endstyle -%}
-{%- endif -%}
 
-{%- style -%}
-  #Banner-{{ section.id }}::after {
-    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
-  }
-{%- endstyle -%}
+  {%- liquid
+    assign full_width = '100vw'
+    assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
 
-{%- style -%}
-  #Banner-{{ section.id }} {
-    margin: 0 auto;
-    margin-top: var(--spacing-sections-mobile);
-    border-radius: {{ section.settings.section_border_radius }}px;
-    overflow: hidden;
-  }
+    if section.settings.image_behavior == 'ambient'
+      assign half_width = '60vw'
+      assign full_width = '120vw'
+      assign stacked_sizes = '(min-width: 750px) 60vw, 120vw'
+      assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
+    elsif section.settings.image_behavior == 'fixed' or section.settings.image_behavior == 'zoom-in'
+      assign half_width = '100vw'
+      assign stacked_sizes = '100vw'
+    else
+      assign half_width = '50vw'
+      assign stacked_sizes = '(min-width: 750px) 50vw, 100vw'
+    endif
+    assign fetch_priority = 'auto'
+    if section.index == 1
+      assign fetch_priority = 'high'
+    endif
+  -%}
 
-  #Banner-{{ section.id }} video {
-    height: 101%;
-  }
+  <div
+    id="Banner-{{ section.id }}"
+    class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} {% if section.settings.video_background %} video-background{% endif %} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}"
+  >
+    {% if section.settings.has_max_width %}
+      {%- style -%}
+        #Banner-{{ section.id }} {
+          margin: 0 auto;
+          max-width: calc(var(--page-width) - 10rem);
+          border-radius: {{ section.settings.section_border_radius }}px;
+          overflow: hidden;
+        }
+      {%- endstyle -%}
+    {% endif %}
+    {%- if section.settings.video_background == true -%}
+      <div class="banner__media media video-background">
+        <video
+          {% if section.settings.video_autoplay == true %}
+            playsinline autoplay
+          {% endif %}
+          muted
+          loop
+          id="myVideo"
+          class="inlinevideo video-player"
+        >
+          <source src="{{ section.settings.video_url }}" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      {%- if section.settings.force_video_autoplay == true -%}
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            let notPlayedFlag = true;
+            const videos = document.querySelectorAll('#Banner-{{ section.id }} video');
 
-  @media screen and (min-width: 750px) {
-    #Banner-{{ section.id }} {
-      margin-top: var(--spacing-sections-desktop);
-    }
-  }
-{%- endstyle -%}
-
-{%- liquid
-  assign full_width = '100vw'
-  assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
-
-  if section.settings.image_behavior == 'ambient'
-    assign half_width = '60vw'
-    assign full_width = '120vw'
-    assign stacked_sizes = '(min-width: 750px) 60vw, 120vw'
-    assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
-  elsif section.settings.image_behavior == 'fixed' or section.settings.image_behavior == 'zoom-in'
-    assign half_width = '100vw'
-    assign stacked_sizes = '100vw'
-  else
-    assign half_width = '50vw'
-    assign stacked_sizes = '(min-width: 750px) 50vw, 100vw'
-  endif
-  assign fetch_priority = 'auto'
-  if section.index == 1
-    assign fetch_priority = 'high'
-  endif
--%}
-
-<div
-  id="Banner-{{ section.id }}"
-  class="banner banner--content-align-{{ section.settings.desktop_content_alignment }} banner--content-align-mobile-{{ section.settings.mobile_content_alignment }} banner--{{ section.settings.image_height }}{% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}{% if section.settings.image_height == 'adapt' and section.settings.image != blank %} banner--adapt{% endif %}{% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}{% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} {% if section.settings.video_background == true %} video-background {% endif %}"
->
-  {%- if section.settings.video_background == true -%}
-    <div class="banner__media media video-background">
-      <video
-        {% if section.settings.video_autoplay == true %}
-          playsinline autoplay
-        {% endif %}
-        muted
-        loop
-        id="myVideo"
-        class="inlinevideo video-player"
-      >
-        <source src="{{ section.settings.video_url }}" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
-    {%- if section.settings.force_video_autoplay == true -%}
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          let notPlayedFlag = true;
-          const videos = document.querySelectorAll('#Banner-{{ section.id }} video');
-
-          if (videos[0]) {
-            document.addEventListener('scroll', (event) => {
-              if (notPlayedFlag && videos[0] && window.pageYOffset > videos[0].getBoundingClientRect().top) {
-                videos.forEach((v) => v.play());
-                notPlayedFlag = false;
-              }
-            });
-          }
-        });
-      </script>
+            if (videos[0]) {
+              document.addEventListener('scroll', (event) => {
+                if (notPlayedFlag && videos[0] && window.pageYOffset > videos[0].getBoundingClientRect().top) {
+                  videos.forEach((v) => v.play());
+                  notPlayedFlag = false;
+                }
+              });
+            }
+          });
+        </script>
+      {%- endif -%}
     {%- endif -%}
-  {%- endif -%}
-  {%- if section.settings.image != blank and section.settings.video_background == false -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {%- liquid
-        assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
-        if section.settings.image_2 != blank
-          assign image_class = 'banner__media-image-half'
-        endif
-        if section.settings.image_2 != blank and section.settings.stack_images_on_mobile
-          assign sizes = stacked_sizes
-        elsif section.settings.image_2 != blank
-          assign sizes = half_width
-        else
-          assign sizes = full_width
-        endif
-      -%}
-      {{
-        section.settings.image
-        | image_url: width: 3840
-        | image_tag:
-          width: section.settings.image.width,
-          height: image_height,
-          class: image_class,
-          sizes: sizes,
-          widths: widths,
-          fetchpriority: fetch_priority
-      }}
-    </div>
-  {%- elsif section.settings.image_2 == blank and section.settings.video_background == false -%}
-    <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    </div>
-  {%- endif -%}
-  {%- if section.settings.image_2 != blank and section.settings.video_background == false -%}
-    <div class="banner__media media{% if section.settings.image != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-      {%- liquid
-        assign image_height_2 = section.settings.image_2.width | divided_by: section.settings.image_2.aspect_ratio
-        if section.settings.image != blank
-          assign image_class_2 = 'banner__media-image-half'
-        endif
-        if section.settings.image != blank and section.settings.stack_images_on_mobile
-          assign sizes = stacked_sizes
-        elsif section.settings.image_2 != blank
-          assign sizes = half_width
-        else
-          assign sizes = full_width
-        endif
-      -%}
-      {{
-        section.settings.image_2
-        | image_url: width: 3840
-        | image_tag:
-          width: section.settings.image_2.width,
-          height: image_height_2,
-          class: image_class_2,
-          sizes: sizes,
-          widths: widths,
-          fetchpriority: fetch_priority
-      }}
-    </div>
-  {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when 'heading' -%}
-            <h2
-              class="banner__heading inline-richtext {{ block.settings.heading_size }}"
-              {{ block.shopify_attributes }}
-            >
-              {{ block.settings.heading }}
-            </h2>
-          {%- when 'text' -%}
-            <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
-              <p>{{ block.settings.text }}</p>
-            </div>
-          {%- when 'buttons' -%}
-            <div
-              class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              {%- if block.settings.button_label_1 != blank -%}
-                <a
-                  {% if block.settings.button_link_1 == blank %}
-                    role="link" aria-disabled="true"
-                  {% else %}
-                    href="{{ block.settings.button_link_1 }}"
-                  {% endif %}
-                  class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
-                >
-                  {{- block.settings.button_label_1 | escape -}}
-                </a>
-              {%- endif -%}
-              {%- if block.settings.button_label_2 != blank -%}
-                <a
-                  {% if block.settings.button_link_2 == blank %}
-                    role="link" aria-disabled="true"
-                  {% else %}
-                    href="{{ block.settings.button_link_2 }}"
-                  {% endif %}
-                  class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
-                >
-                  {{- block.settings.button_label_2 | escape -}}
-                </a>
-              {%- endif -%}
-            </div>
-        {%- endcase -%}
-      {%- endfor -%}
+    {%- if section.settings.image != blank and section.settings.video_background == false -%}
+      <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {%- liquid
+          assign image_height = section.settings.image.width | divided_by: section.settings.image.aspect_ratio
+          if section.settings.image_2 != blank
+            assign image_class = 'banner__media-image-half'
+          endif
+          if section.settings.image_2 != blank and section.settings.stack_images_on_mobile
+            assign sizes = stacked_sizes
+          elsif section.settings.image_2 != blank
+            assign sizes = half_width
+          else
+            assign sizes = full_width
+          endif
+        -%}
+        {{
+          section.settings.image
+          | image_url: width: 3840
+          | image_tag:
+            width: section.settings.image.width,
+            height: image_height,
+            class: image_class,
+            sizes: sizes,
+            widths: widths,
+            fetchpriority: fetch_priority
+        }}
+      </div>
+    {%- elsif section.settings.image_2 == blank and section.settings.video_background == false -%}
+      <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.image_2 != blank and section.settings.video_background == false -%}
+      <div class="banner__media media{% if section.settings.image != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {%- liquid
+          assign image_height_2 = section.settings.image_2.width | divided_by: section.settings.image_2.aspect_ratio
+          if section.settings.image != blank
+            assign image_class_2 = 'banner__media-image-half'
+          endif
+          if section.settings.image != blank and section.settings.stack_images_on_mobile
+            assign sizes = stacked_sizes
+          elsif section.settings.image_2 != blank
+            assign sizes = half_width
+          else
+            assign sizes = full_width
+          endif
+        -%}
+        {{
+          section.settings.image_2
+          | image_url: width: 3840
+          | image_tag:
+            width: section.settings.image_2.width,
+            height: image_height_2,
+            class: image_class_2,
+            sizes: sizes,
+            widths: widths,
+            fetchpriority: fetch_priority
+        }}
+      </div>
+    {%- endif -%}
+    <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+      <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <h2
+                class="banner__heading inline-richtext {{ block.settings.heading_size }}"
+                {{ block.shopify_attributes }}
+              >
+                {{ block.settings.heading }}
+              </h2>
+            {%- when 'text' -%}
+              <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {%- when 'buttons' -%}
+              <div
+                class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                {%- if block.settings.button_label_1 != blank -%}
+                  <a
+                    {% if block.settings.button_link_1 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link_1 }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+                  >
+                    {{- block.settings.button_label_1 | escape -}}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.button_label_2 != blank -%}
+                  <a
+                    {% if block.settings.button_link_2 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link_2 }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+                  >
+                    {{- block.settings.button_label_2 | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 {% schema %}
 {
   "name": "t:sections.image-banner.name",
   "tag": "section",
-  "class": "section page-width",
+  "class": "section",
   "disabled_on": {
     "groups": ["header", "footer"]
   },
@@ -257,6 +273,20 @@
       "unit": "%",
       "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
       "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Full page width or has Max page width"
+    },
+    {
+      "type": "checkbox",
+      "id": "has_max_width",
+      "default": false,
+      "label": "has max width"
+    },
+    {
+      "type": "header",
+      "content": "Video background"
     },
     {
       "type": "checkbox",
@@ -380,7 +410,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "default": "schema-1"
     },
     {
       "type": "header",
