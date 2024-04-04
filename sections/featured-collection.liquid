@@ -94,6 +94,7 @@
               show_vendor: section.settings.show_vendor,
               show_rating: section.settings.show_rating,
               show_quick_add: section.settings.enable_quick_add,
+              show_product_description: section.settings.show_product_description,
               section_id: section.id
             %}
           </li>
@@ -235,6 +236,16 @@
         }
       ],
       "default": "body"
+    },
+    {
+      "type": "header",
+      "content": "Product description"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_description",
+      "default": false,
+      "label": "Show product description"
     },
     {
       "type": "collection",
