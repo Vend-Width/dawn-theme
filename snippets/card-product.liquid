@@ -24,6 +24,18 @@
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
+{% style %}
+  .card .card__information {
+    grid-row-start: 1;
+  }
+  .card__information-product-description ul {
+    list-style-type: disclosure-closed !important;
+  }
+  .card__information-product-description li:not(:last-child) {
+    margin-bottom: 12px;
+  }
+{% endstyle %}
+
 {%- if card_product and card_product != empty -%}
   {%- liquid
     assign ratio = 1
