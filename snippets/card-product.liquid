@@ -25,6 +25,18 @@
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
 
 {% style %}
+  .card-information {
+    padding: 1em;
+  }
+  .card-information .price {
+    position: absolute;
+    display: inline-block;
+    top: 27px;
+    right: 8px;
+  }
+  .card .card__content {
+    max-height: 500px;
+  }
   .card .card__information {
     grid-row-start: 1;
   }
