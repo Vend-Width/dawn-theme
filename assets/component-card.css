@@ -466,7 +466,8 @@
   }
 }
 
-.contains-card--standard li:has(> .card-wrapper:hover) {
+ul.contains-card--standard li:has(> .card-wrapper:hover),
+ul.contains-card--product li:has(> .card-wrapper:hover)  {
   z-index: 999;
 }
 
@@ -501,7 +502,8 @@
     --_t: translateX(calc(-1*var(--_f))) rotateY(calc(-1*var(--_a)));
   } */
 
-  ul.contains-card--standard:hover > li:not(:hover) {
+  ul.contains-card--standard:hover > li:not(:hover),
+  ul.contains-card--product:hover > li:not(:hover) {
     filter: blur(3px);
   }
   .card-wrapper:hover {
