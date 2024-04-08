@@ -65,10 +65,16 @@
               <s class="price-item price-item--regular variant-item__old-price">
                 {% if settings.currency_code_enabled %}
                   {{ compare_at_price | money_with_currency -}}
-                  {% if product.tags contains 'monthly' %} / month{% endif %}
+                  {% if product.tags contains 'monthly' -%}
+                    <br>
+                    / month
+                  {%- endif %}
                 {% else %}
                   {{ compare_at_price | money -}}
-                  {% if product.tags contains 'monthly' %} / month{% endif %}
+                  {% if product.tags contains 'monthly' -%}
+                    <br>
+                    / month
+                  {%- endif %}
                 {% endif %}
               </s>
             </span>
@@ -82,7 +88,10 @@
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span class="price-item price-item--regular">
           {{ money_price -}}
-          {%- if product.tags contains 'monthly' %} / month{% endif %}
+          {%- if product.tags contains 'monthly' -%}
+            <br>
+            / month
+          {%- endif %}
         </span>
       {%- endif -%}
     </div>
@@ -93,10 +102,16 @@
           <s class="price-item price-item--regular">
             {% if settings.currency_code_enabled %}
               {{ compare_at_price | money_with_currency -}}
-              {% if product.tags contains 'monthly' %} / month{% endif %}
+              {% if product.tags contains 'monthly' -%}
+                <br>
+                / month
+              {%- endif %}
             {% else %}
               {{ compare_at_price | money -}}
-              {% if product.tags contains 'monthly' %} / month{% endif %}
+              {% if product.tags contains 'monthly' -%}
+                <br>
+                / month
+              {%- endif %}
             {% endif %}
           </s>
         </span>
