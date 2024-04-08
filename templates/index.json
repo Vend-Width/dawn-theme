@@ -78,7 +78,8 @@
     "featured_collection": {
       "type": "featured-collection",
       "custom_css": [
-        ".card .card__content {max-height: 533px; border: solid black 1px; border-radius: 12px; }"
+        ".card .card__content {max-height: 533px; border: solid black 1px; border-radius: 12px;}",
+        "ul {font-size: 17px;}"
       ],
       "settings": {
         "title": "Monthly plans",
