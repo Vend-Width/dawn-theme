@@ -14,7 +14,39 @@
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
+{% comment %} https://www.smashingmagazine.com/2023/07/shines-perspective-rotations-css-3d-effects-images/ {% endcomment %}
 {%- style -%}
+  #shopify-section-{{ section.id }} li:has(> .card-wrapper:hover) {
+    z-index: 999;
+  }
+
+  .card-wrapper {
+    --f: .08; /* the parallax factor (the smaller the better) */
+    --r: 10px; /* radius */
+
+    --_f: calc(100%*var(--f)/(1 + var(--f)));
+    --_a: calc(90deg*var(--f));
+    /* aspect-ratio: calc(1 + var(--f)); */
+    /* clip-path: inset(0 var(--_f) 0 0 round var(--r)); */
+    transform: perspective(400px) var(--_t, rotateY(var(--_a)));
+    transition: transform .4s cubic-bezier(0, 0.55, 0.45, 1), filter 2s linear;
+    filter: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  /* #shopify-section-{{ section.id }} li:nth-child(3n) .card-wrapper {
+    --_t: translateX(calc(-1*var(--_f))) rotateY(calc(-1*var(--_a)));
+  } */
+
+  #shopify-section-{{ section.id }} ul:hover > li:not(:hover) {
+    filter: blur(3px);
+  }
+  .card-wrapper:hover {
+    /* clip-path: inset(0 0 0 var(--_f) round var(--r)); */
+    transform: scale(1.2);
+  }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
