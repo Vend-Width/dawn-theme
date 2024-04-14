@@ -79,7 +79,6 @@
       "type": "featured-collection",
       "custom_css": [
         ".card--card.gradient {border: solid black 1px; border-radius: 12px;}",
-        ".card .card__content {max-height: 566px;}",
         "slider-component ul {font-size: 17px;}",
         "@media only screen and (min-width: 750px) {h2 {margin-bottom: 4em; }}"
       ],
