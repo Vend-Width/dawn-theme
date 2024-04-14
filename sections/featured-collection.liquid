@@ -16,9 +16,35 @@
 
 {% comment %} https://www.smashingmagazine.com/2023/07/shines-perspective-rotations-css-3d-effects-images/ {% endcomment %}
 {%- style -%}
+  #shopify-section-{{ section.id }} .slider-buttons {
+    display: none;
+  }
+  #shopify-section-{{ section.id }} .card .card__content {
+    max-height: {{ section.settings.max_height }}px;
+  }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+
+  @media screen and (max-width: 989px) {
+    ul#Slider-{{ section.id }} {
+      padding-bottom: 160px;
+      margin-bottom: -160px;
+    }
+    #shopify-section-{{ section.id }} .card .card__content {
+      max-height: {{ section.settings.max_height | times: 1.1 }}px;
+    }
+    #shopify-section-{{ section.id }} .card__information-product-description ul {
+      padding-left: 22px;
+    }
+  }
+  @media only screen and (min-width: 990px) and (max-width: 1332px) {
+    #shopify-section-{{ section.id }} .card .card__content {
+      max-height: {{ section.settings.max_height | times: 1.3 }}px;
+    }
   }
 
   @media screen and (min-width: 750px) {
@@ -96,6 +122,7 @@
               show_rating: section.settings.show_rating,
               show_quick_add: section.settings.enable_quick_add,
               show_product_description: section.settings.show_product_description,
+              hide_image: true,
               section_id: section.id
             %}
           </li>
@@ -455,6 +482,16 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "range",
+      "id": "max_height",
+      "min": 466,
+      "max": 666,
+      "step": 2,
+      "unit": "px",
+      "label": "Card Max height",
+      "default": 566
     }
   ],
   "presets": [

@@ -453,7 +453,7 @@
     clip-path: polygon(var(--shape--blob-2));
   }
 
-  .grid__item:nth-child(5n) .product-card-wrapper:hover .shape--blob {
+  .grid__item:nth-child(5n) .product-card-wrapper:hover .shape--blob { 
     clip-path: polygon(var(--shape--blob-3));
   }
 
@@ -471,18 +471,18 @@ ul.contains-card--product li:has(> .card-wrapper:hover)  {
   z-index: 999;
 }
 
-@media only screen and (min-width: 750px) {
-  .card {
-    box-shadow:
-      0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-      0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-      0 100px 80px rgba(0, 0, 0, 0.12)
-    ;
-  }
+.card {
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12)
+  ;
+}
 
+@media only screen and (min-width: 990px) {
   .card-wrapper {
     --f: .08; /* the parallax factor (the smaller the better) */
     --r: 10px; /* radius */
@@ -508,6 +508,8 @@ ul.contains-card--product li:has(> .card-wrapper:hover)  {
   }
   .card-wrapper:hover {
     /* clip-path: inset(0 0 0 var(--_f) round var(--r)); */
-    transform: scale(1.3);
+    transform: scale(1.2);
   }
 }
+
+@media only screen and (min-width: 1070px) {
